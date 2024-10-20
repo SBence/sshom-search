@@ -1,0 +1,18 @@
+.headerGroup {
+  flex-grow: 1;
+}
+
+.emptyTableBox {
+  display: flex;
+  justify-content: center;
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mainStack {
+  flex-grow: 1;
+}

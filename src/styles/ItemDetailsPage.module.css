@@ -1,0 +1,8 @@
+.pageContainer {
+  width: 100%;
+  margin-bottom: var(--mantine-spacing-xl);
+}
+
+.detailsSectionPaper {
+  padding: var(--mantine-spacing-lg);
+}

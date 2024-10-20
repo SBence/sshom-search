@@ -1,0 +1,8 @@
+.searchInput {
+  flex-grow: 3;
+}
+
+.actionIconIcon {
+  width: rem(18);
+  height: rem(18);
+}

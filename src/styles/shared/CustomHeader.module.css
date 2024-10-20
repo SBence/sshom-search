@@ -1,0 +1,18 @@
+.header {
+  position: sticky;
+  top: 0;
+  padding-top: var(--mantine-spacing-md);
+  padding-bottom: var(--mantine-spacing-md);
+  margin-bottom: var(--mantine-spacing-xl);
+  background-color: var(--mantine-color-body);
+  border-bottom: rem(1px) solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  display: flex;
+  align-items: center;
+}
+
+.headerContent {
+  height: 100%;
+  flex-grow: 1;
+  align-content: center;
+}

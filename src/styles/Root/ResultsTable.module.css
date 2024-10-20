@@ -1,0 +1,16 @@
+.pointer {
+  cursor: pointer;
+}
+
+.tableBox {
+  position: relative;
+  flex-grow: 1;
+}
+
+.tableLinkContainer {
+  display: flex;
+}
+
+.tableLink {
+  word-wrap: break-word;
+}

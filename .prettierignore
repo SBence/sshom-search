@@ -1,0 +1,2 @@
+# Ignore generated API types
+src/api/types.d.ts

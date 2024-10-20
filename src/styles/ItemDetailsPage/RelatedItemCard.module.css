@@ -1,0 +1,9 @@
+.relatedItemPaper {
+  padding: var(--mantine-spacing-md);
+  user-select: none;
+  cursor: pointer;
+}
+
+.relatedItemPaper:hover {
+  background-color: var(--mantine-color-default-hover);
+}

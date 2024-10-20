@@ -1,0 +1,7 @@
+.skeletonMT {
+  margin-top: rem(6px);
+}
+
+.skeletonBlockMT {
+  margin-top: var(--mantine-spacing-xl);
+}

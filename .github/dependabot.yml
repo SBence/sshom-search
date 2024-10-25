@@ -13,4 +13,3 @@ updates:
         update-types: ["version-update:semver-major"]
 
       - dependency-name: "@tabler/icons-react"
-        versions: ["3.19.0"]

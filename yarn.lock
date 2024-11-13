@@ -1455,10 +1455,10 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-markdown-to-jsx@^7.6.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.6.0.tgz#d49c66a0b6e8e86ef34819b8e9cf08fa8ace8cdc"
-  integrity sha512-KZ+w5qV6QEa8S5A0FekjcBycFVQTiN3n223WvoK7RSMSOZCim70r/IGzN2y0pkRHvmd1FcMG2vL3iaTljWsBAA==
+markdown-to-jsx@^7.6.1:
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.6.1.tgz#048b872fee1cf78d8c8268e30b5ae28335a58b73"
+  integrity sha512-kZCvhxW70lZQoP3h75piO/CTmDX87jE0aPzw46u7dRZ4AykBYAYbn4Zu3wav0vBzn4PZ8k0kgknVOeEzdBtMPA==
 
 merge2@^1.3.0:
   version "1.4.1"

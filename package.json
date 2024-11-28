@@ -14,9 +14,9 @@
     "postinstall": "yarn run api:generate"
   },
   "dependencies": {
-    "@mantine/core": "^7.14.2",
-    "@mantine/hooks": "^7.14.2",
-    "@mantine/notifications": "^7.14.2",
+    "@mantine/core": "^7.14.3",
+    "@mantine/hooks": "^7.14.3",
+    "@mantine/notifications": "^7.14.3",
     "@tabler/icons-react": "~3.18.0",
     "clsx": "^2.1.1",
     "jotai": "^2.10.3",

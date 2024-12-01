@@ -3391,7 +3391,7 @@ export interface components {
             pages?: number;
             sources?: components["schemas"]["SourceDto"][];
         };
-        PaginatedSearchItemsBasic: {
+        PaginatedItemsBasicItemBasicDto: {
             /** Format: int64 */
             hits?: number;
             /** Format: int32 */
@@ -3402,17 +3402,7 @@ export interface components {
             perpage?: number;
             /** Format: int32 */
             pages?: number;
-            items?: components["schemas"]["SearchItemBasic"][];
-        };
-        SearchItemBasic: {
-            /** Format: int64 */
-            id?: number;
-            persistentId?: string;
-            /** @enum {string} */
-            category?: "tool-or-service" | "training-material" | "publication" | "dataset" | "workflow" | "step";
-            label?: string;
-            version?: string;
-            lastInfoUpdate?: string;
+            items?: components["schemas"]["ItemBasicDto"][];
         };
         PaginatedPublications: {
             /** Format: int64 */
@@ -3512,19 +3502,6 @@ export interface components {
         SuggestedSearchPhrases: {
             phrase?: string;
             suggestions?: components["schemas"]["SuggestedObject"][];
-        };
-        PaginatedItemsBasicItemBasicDto: {
-            /** Format: int64 */
-            hits?: number;
-            /** Format: int32 */
-            count?: number;
-            /** Format: int32 */
-            page?: number;
-            /** Format: int32 */
-            perpage?: number;
-            /** Format: int32 */
-            pages?: number;
-            items?: components["schemas"]["ItemBasicDto"][];
         };
         PaginatedDatasets: {
             /** Format: int64 */
@@ -7713,7 +7690,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PaginatedSearchItemsBasic"];
+                    "application/json": components["schemas"]["PaginatedItemsBasicItemBasicDto"];
                 };
             };
         };
@@ -7739,7 +7716,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PaginatedSearchItemsBasic"];
+                    "application/json": components["schemas"]["PaginatedItemsBasicItemBasicDto"];
                 };
             };
         };

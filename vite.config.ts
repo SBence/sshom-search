@@ -5,11 +5,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
-  /* css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "./src/_mantine";`,
-      },
+  resolve: {
+    alias: {
+      "@tabler/icons-react": "@tabler/icons-react/dist/esm/icons/index.mjs",
     },
-  }, */
+  },
 });

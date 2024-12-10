@@ -449,10 +449,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@mantine/core@^7.14.3":
-  version "7.14.3"
-  resolved "https://registry.yarnpkg.com/@mantine/core/-/core-7.14.3.tgz#79c23f907b41c74a9ac8d0381ea753f5f938e0b1"
-  integrity sha512-niAi+ZYBr4KrG+X2Mx+muvEzUOOHc/Rx0vsbIGYeNe7urwHSm/xNEGsaapmCqeRC0CSL4KI6TJOq8QhnSuQZcw==
+"@mantine/core@^7.15.0":
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@mantine/core/-/core-7.15.0.tgz#009cd454170a089a6e679390d0c11d0e6036ca21"
+  integrity sha512-tZlRydfaEaaCNIi3tl1u+VtJxNyBoml2iCJAy6ZqcNNcjy/krJmta5lVtjUeApZfE33rkvr+3WVqGk0YjW6oSQ==
   dependencies:
     "@floating-ui/react" "^0.26.28"
     clsx "^2.1.1"
@@ -461,23 +461,23 @@
     react-textarea-autosize "8.5.5"
     type-fest "^4.27.0"
 
-"@mantine/hooks@^7.14.3":
-  version "7.14.3"
-  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-7.14.3.tgz#26bfbf7d851989be170caaae4189833131a3e28a"
-  integrity sha512-cU3R9b8GLs6aCvpsVC56ZOOJCUIoDqX3RcLWkcfpA5a47LjWa/rzegP4YWfNW6/E9vodPJT4AEbYXVffYlyNwA==
+"@mantine/hooks@^7.15.0":
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-7.15.0.tgz#b097b7e60181beb563eb7232a4f5882a3105000b"
+  integrity sha512-AV4ItRbVIWVDzpOPyj3ICrfQq7HEdKhO7IE7xxkdbJ4oj73DAq2jFsMoNdj3dN9u2tOn1bhPBIaP+8gKd0oAcw==
 
-"@mantine/notifications@^7.14.3":
-  version "7.14.3"
-  resolved "https://registry.yarnpkg.com/@mantine/notifications/-/notifications-7.14.3.tgz#3ee2145d7e559ee29b5a8ce8e3289383cbe1c421"
-  integrity sha512-7N9u4upi1On8TL94UvrUNhpDGxp1sAkbcgiNcu6zhvy4j29TPFapoXB5CRE9zzjAf3CYq3AigE96bXlCDm9xuQ==
+"@mantine/notifications@^7.15.0":
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@mantine/notifications/-/notifications-7.15.0.tgz#c1c99533289d88e67be4eb79e4e2494625070f29"
+  integrity sha512-F1g2mFRUTk++ATsbsi8T2WaTRhejB05FusvG3iHC4/a1+0K5Vjh2Armt3VNY0vsUR3V5RdAnP8uZDlMhM7YTQQ==
   dependencies:
-    "@mantine/store" "7.14.3"
+    "@mantine/store" "7.15.0"
     react-transition-group "4.4.5"
 
-"@mantine/store@7.14.3":
-  version "7.14.3"
-  resolved "https://registry.yarnpkg.com/@mantine/store/-/store-7.14.3.tgz#4f1fd9ee538da5b62efcdd717e3a807a0e722532"
-  integrity sha512-o15vbTUNlLqD/yLOtEClnc4fY2ONDaCZiaL9REUy0xhCDbVTeeqnu9BV604yuym50ZH5mhMHix1TX3K9vGsWvA==
+"@mantine/store@7.15.0":
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/@mantine/store/-/store-7.15.0.tgz#f3064bd5915de50b256ed825be1148e916a151f7"
+  integrity sha512-XzQcVFTkD0XspPNsB2NivzbAeZUrLFGO5j8hvKcmGGvUWYlR99GbL7q13ujwJQnNpElqAPSeuN161tnbCqB+Ng==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

@@ -631,17 +631,17 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.28.0.tgz#cb313feef9ac6e3737067fdf34f42804ac65a6f2"
   integrity sha512-Bvno2/aZT6usSa7lRDL2+hMjVAGjuqaymF1ApZm31JXzniR/hvr14jpU+/z4X6Gt5BPlzosscyJZGUvguXIqeQ==
 
-"@tabler/icons-react@^3.27.1":
-  version "3.27.1"
-  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-3.27.1.tgz#2817fa13466dbe9116e1760a565b981c45b62cf3"
-  integrity sha512-4C8PPvWPIQZvHgpWSGVIJUAbZz1qhKHvaSi9GWgXaDYB9CAfVz4puEcjo3nFCeg1OUPv3ZQZ0Ste0nh9/IeuWw==
+"@tabler/icons-react@^3.28.1":
+  version "3.28.1"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-3.28.1.tgz#6bcd85f3fb924ceeb3caf2ce5be7523e41008266"
+  integrity sha512-KNBpA2kbxr3/2YK5swt7b/kd/xpDP1FHYZCxDFIw54tX8slELRFEf95VMxsccQHZeIcUbdoojmUUuYSbt/sM5Q==
   dependencies:
-    "@tabler/icons" "3.27.1"
+    "@tabler/icons" "3.28.1"
 
-"@tabler/icons@3.27.1":
-  version "3.27.1"
-  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.27.1.tgz#01debdfde1c18c92678584c516211eea43f79a38"
-  integrity sha512-Utt80OeExBV/Pi9m9Z7ZRHOHQPapMO8t4mCSMb/n5oiLWCEU2HX+9mGzo772SVxyDZ3YQBgmzIYnGKhL3tUSSQ==
+"@tabler/icons@3.28.1":
+  version "3.28.1"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.28.1.tgz#271e6d4107525dbb8622a36a9414487e734606aa"
+  integrity sha512-h7nqKEvFooLtFxhMOC1/2eiV+KRXhBUuDUUJrJlt6Ft6tuMw2eU/9GLQgrTk41DNmIEzp/LI83K9J9UUU8YBYQ==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"

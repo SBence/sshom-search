@@ -18,7 +18,6 @@ import {
 } from "@mantine/core";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { formatKebabCase } from "@utils/formatKebabCase";
-import clsx from "clsx";
 import Markdown from "markdown-to-jsx";
 import ItemPropertyBox from "./ItemPropertyBox";
 
@@ -71,16 +70,7 @@ export default function RelatedItemCard({ item }: { item: RelatedItemDto }) {
           )}
         </Stack>
       </Modal>
-      <Paper
-        withBorder
-        className={clsx(
-          classes.relatedItemPaper,
-          item.description && classes.relatedItemPaper,
-        )}
-        onClick={() => {
-          if (item.description) open();
-        }}
-      >
+      <Paper withBorder className={classes.relatedItemPaper} onClick={open}>
         <Stack gap="xs">
           {item.relation?.label && (
             <Text size="sm" c="dimmed">

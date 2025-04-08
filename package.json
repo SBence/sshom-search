@@ -14,9 +14,9 @@
     "postinstall": "$npm_execpath run api:generate"
   },
   "dependencies": {
-    "@mantine/core": "^7.17.3",
-    "@mantine/hooks": "^7.17.3",
-    "@mantine/notifications": "^7.17.3",
+    "@mantine/core": "^7.17.4",
+    "@mantine/hooks": "^7.17.4",
+    "@mantine/notifications": "^7.17.4",
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
     "jotai": "^2.12.2",

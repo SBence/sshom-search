@@ -20,7 +20,7 @@
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
     "jotai": "^2.12.3",
-    "markdown-to-jsx": "^7.7.4",
+    "markdown-to-jsx": "^7.7.6",
     "openapi-typescript": "^7.6.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

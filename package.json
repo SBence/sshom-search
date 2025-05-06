@@ -19,7 +19,7 @@
     "@mantine/notifications": "^7.17.7",
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
-    "jotai": "^2.12.3",
+    "jotai": "^2.12.4",
     "markdown-to-jsx": "^7.7.6",
     "openapi-typescript": "^7.7.1",
     "react": "^18.3.1",

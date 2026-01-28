@@ -2070,10 +2070,10 @@ iterator.prototype@^1.1.4:
     has-symbols "^1.1.0"
     set-function-name "^2.0.2"
 
-jotai@^2.16.2:
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.16.2.tgz#e9685183ac8669060c3120bff60f6cec044b0052"
-  integrity sha512-DH0lBiTXvewsxtqqwjDW6Hg9JPTDnq9LcOsXSFWCAUEt+qj5ohl9iRVX9zQXPPHKLXCdH+5mGvM28fsXMl17/g==
+jotai@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.17.0.tgz#b70732236ff881cdd7c53251caf54695b2ce3742"
+  integrity sha512-DBPT7Vx7E7R/ZJL7Uq7yUA9+LLR0IRiRM+Bw5ugVwv8L8++RjlXVXZ2//ccucypc5lcyuHOW09rYcW77RurduQ==
 
 js-levenshtein@^1.1.6:
   version "1.1.6"

@@ -19,7 +19,7 @@
     "@mantine/notifications": "^7.17.8",
     "@tabler/icons-react": "^3.40.0",
     "clsx": "^2.1.1",
-    "jotai": "^2.18.1",
+    "jotai": "^2.19.0",
     "markdown-to-jsx": "^7.7.17",
     "openapi-typescript": "^7.13.0",
     "react": "^18.3.1",
@@ -42,7 +42,7 @@
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.1",
+    "typescript-eslint": "^8.57.2",
     "vite": "^6.4.1",
     "vite-tsconfig-paths": "^5.1.4"
   }

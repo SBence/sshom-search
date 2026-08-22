@@ -14,8 +14,7 @@ export const TABLE_MAX_LINES = 2;
 
 // Layout breakpoints
 export const ITEM_DETAILS_COMPACT_LAYOUT_BREAKPOINT:
-  | MantineSize
-  | (string & {}) = "xs";
+  MantineSize | (string & {}) = "xs";
 export const MOBILE_BREAKPOINT: MantineBreakpoint = "xs";
 
 // Transitions

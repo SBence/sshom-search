@@ -20,7 +20,8 @@ export interface paths {
         delete: operations["deleteWorkflow"];
         options?: never;
         head?: never;
-        patch?: never;
+        /** Patch  workflow for given persistentId */
+        patch: operations["patchWorkflow"];
         trace?: never;
     };
     "/api/workflows/{persistentId}/versions/{versionId}/revert": {
@@ -56,7 +57,8 @@ export interface paths {
         delete: operations["deleteStep"];
         options?: never;
         head?: never;
-        patch?: never;
+        /** Patch step for given persistentId and workflow persistentId */
+        patch: operations["patchStep"];
         trace?: never;
     };
     "/api/workflows/{persistentId}/steps/{stepPersistentId}/versions/{stepVersionId}/revert": {
@@ -266,7 +268,8 @@ export interface paths {
         delete: operations["deleteTrainingMaterial"];
         options?: never;
         head?: never;
-        patch?: never;
+        /** Patch training material for given persistentId */
+        patch: operations["patchTrainingMaterial"];
         trace?: never;
     };
     "/api/training-materials/{persistentId}/versions/{versionId}/revert": {
@@ -319,7 +322,8 @@ export interface paths {
         delete: operations["deleteTool"];
         options?: never;
         head?: never;
-        patch?: never;
+        /** Patching a tool with new data for a given persistentId */
+        patch: operations["patchTool"];
         trace?: never;
     };
     "/api/tools-services/{persistentId}/versions/{versionId}/revert": {
@@ -388,7 +392,8 @@ export interface paths {
         delete: operations["deletePublication"];
         options?: never;
         head?: never;
-        patch?: never;
+        /** Patch publication for given persistentId */
+        patch: operations["patchPublication"];
         trace?: never;
     };
     "/api/publications/{persistentId}/versions/{versionId}/revert": {
@@ -432,7 +437,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Get property type by code  */
+        /** Get property type by code */
         get: operations["getPropertyType"];
         /** Update property type by code */
         put: operations["updatePropertyType"];
@@ -600,7 +605,8 @@ export interface paths {
         delete: operations["deleteDataset"];
         options?: never;
         head?: never;
-        patch?: never;
+        /** Patch dataset for given persistentId */
+        patch: operations["patchDataset"];
         trace?: never;
     };
     "/api/datasets/{persistentId}/versions/{versionId}/revert": {
@@ -660,7 +666,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Get actor given by id with optional list of items that actor contributes to  */
+        /** Get actor given by id with optional list of items that actor contributes to */
         get: operations["getActor"];
         put: operations["updateActor"];
         post?: never;
@@ -1078,7 +1084,7 @@ export interface paths {
         /** Get all property types in pages */
         get: operations["getPropertyTypes"];
         put?: never;
-        /** Create property type  */
+        /** Create property type */
         post: operations["createPropertyType"];
         delete?: never;
         options?: never;
@@ -2567,11 +2573,11 @@ export interface paths {
             cookie?: never;
         };
         get: operations["handle"];
-        put: operations["handle_3"];
-        post: operations["handle_2"];
-        delete: operations["handle_5"];
+        put: operations["handle_2"];
+        post: operations["handle_1"];
+        delete: operations["handle_3"];
         options: operations["handle_6"];
-        head: operations["handle_1"];
+        head: operations["handle_5"];
         patch: operations["handle_4"];
         trace?: never;
     };
@@ -2633,7 +2639,7 @@ export interface components {
         VocabularyId: {
             code?: string;
         };
-        /** @description Merged workflow */
+        /** @description Workflow patch */
         WorkflowCore: {
             label: string;
             version?: string;
@@ -2655,7 +2661,7 @@ export interface components {
             externalIds?: components["schemas"]["ActorExternalIdDto"][];
             website?: string;
             email?: string;
-            affiliations?: components["schemas"]["ActorDto"][];
+            affiliations?: unknown[];
             items?: components["schemas"]["ItemBasicDto"][];
         };
         ActorExternalIdDto: {
@@ -2838,8 +2844,9 @@ export interface components {
             media?: components["schemas"]["ItemMediaDto"][];
             thumbnail?: components["schemas"]["ItemMediaDto"];
             composedOf?: components["schemas"]["StepDto"][];
+            flags?: "HANDLE_TO_BE_ISSUED"[];
         };
-        /** @description Merged step */
+        /** @description Updated step */
         StepCore: {
             label: string;
             version?: string;
@@ -2908,7 +2915,7 @@ export interface components {
         UserDisplayNameCore: {
             displayName?: string;
         };
-        /** @description Merged training material */
+        /** @description Training material patch */
         TrainingMaterialCore: {
             label: string;
             version?: string;
@@ -2955,7 +2962,7 @@ export interface components {
             /** @example 2000-02-29T20:02:00+0000 */
             dateLastUpdated?: string;
         };
-        /** @description Performing merge into tool */
+        /** @description Tool patch */
         ToolCore: {
             label: string;
             version?: string;
@@ -3009,7 +3016,7 @@ export interface components {
             /** @example 2000-02-29T20:02:00+0000 */
             lastHarvestedDate?: string;
         };
-        /** @description Merged publication */
+        /** @description Publication patch */
         PublicationCore: {
             label: string;
             version?: string;
@@ -3134,7 +3141,7 @@ export interface components {
             ord?: number;
             urlTemplate?: string;
         };
-        /** @description Merged dataset */
+        /** @description Dataset patch */
         DatasetCore: {
             label: string;
             version?: string;
@@ -3283,7 +3290,7 @@ export interface components {
             media?: components["schemas"]["ItemMediaDto"][];
             thumbnail?: components["schemas"]["ItemMediaDto"];
         };
-        ItemsDifferencesDtoItemDtoItemDto: {
+        ItemsDifferencesDto: {
             item?: components["schemas"]["ItemDto"];
             equal?: boolean;
             other?: components["schemas"]["ItemDto"];
@@ -3338,7 +3345,7 @@ export interface components {
             description?: string;
             conceptResults?: components["schemas"]["PaginatedConcepts"];
         };
-        StreamingResponseBody: Record<string, never>;
+        StreamingResponseBody: unknown;
         PaginatedUsers: {
             /** Format: int64 */
             hits?: number;
@@ -3494,6 +3501,7 @@ export interface components {
             owner?: string;
             accessibleAt?: string[];
             thumbnailId?: string;
+            sources?: components["schemas"]["SourceDto"][];
         };
         SuggestedObject: {
             phrase?: string;
@@ -3610,7 +3618,16 @@ export interface components {
             externalIds?: components["schemas"]["ActorExternalIdDto"][];
             website?: string;
             email?: string;
-            affiliations?: components["schemas"]["ActorDto"][];
+            affiliations?: {
+                /** Format: int64 */
+                id?: number;
+                name?: string;
+                externalIds?: components["schemas"]["ActorExternalIdDto"][];
+                website?: string;
+                email?: string;
+                affiliations?: unknown[];
+                items?: components["schemas"]["ItemBasicDto"][];
+            }[];
         };
         MultiValueMapStringString: {
             all?: {
@@ -3703,6 +3720,35 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    patchWorkflow: {
+        parameters: {
+            query?: {
+                draft?: boolean;
+                approved?: boolean;
+            };
+            header?: never;
+            path: {
+                persistentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["WorkflowCore"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["WorkflowDto"];
+                };
             };
         };
     };
@@ -3806,6 +3852,36 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    patchStep: {
+        parameters: {
+            query?: {
+                draft?: boolean;
+                approved?: boolean;
+            };
+            header?: never;
+            path: {
+                persistentId: string;
+                stepPersistentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["StepCore"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["StepDto"];
+                };
             };
         };
     };
@@ -4249,6 +4325,35 @@ export interface operations {
             };
         };
     };
+    patchTrainingMaterial: {
+        parameters: {
+            query?: {
+                draft?: boolean;
+                approved?: boolean;
+            };
+            header?: never;
+            path: {
+                persistentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TrainingMaterialCore"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TrainingMaterialDto"];
+                };
+            };
+        };
+    };
     revertTrainingMaterial: {
         parameters: {
             query?: never;
@@ -4368,6 +4473,35 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    patchTool: {
+        parameters: {
+            query?: {
+                draft?: boolean;
+                approved?: boolean;
+            };
+            header?: never;
+            path: {
+                persistentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ToolCore"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ToolDto"];
+                };
             };
         };
     };
@@ -4558,6 +4692,35 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    patchPublication: {
+        parameters: {
+            query?: {
+                draft?: boolean;
+                approved?: boolean;
+            };
+            header?: never;
+            path: {
+                persistentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["PublicationCore"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicationDto"];
+                };
             };
         };
     };
@@ -5090,6 +5253,35 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    patchDataset: {
+        parameters: {
+            query?: {
+                draft?: boolean;
+                approved?: boolean;
+            };
+            header?: never;
+            path: {
+                persistentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["DatasetCore"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DatasetDto"];
+                };
             };
         };
     };
@@ -6861,7 +7053,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -6888,7 +7080,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7081,7 +7273,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7199,7 +7391,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7336,7 +7528,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7454,7 +7646,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7547,7 +7739,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7665,7 +7857,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7809,7 +8001,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -7927,7 +8119,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -8229,7 +8421,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -8347,7 +8539,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ItemsDifferencesDtoItemDtoItemDto"];
+                    "application/json": components["schemas"]["ItemsDifferencesDto"];
                 };
             };
         };
@@ -8513,28 +8705,6 @@ export interface operations {
             };
         };
     };
-    handle_3: {
-        parameters: {
-            query: {
-                allRequestParams: components["schemas"]["MultiValueMapStringString"];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/xml": string;
-                };
-            };
-        };
-    };
     handle_2: {
         parameters: {
             query: {
@@ -8557,7 +8727,29 @@ export interface operations {
             };
         };
     };
-    handle_5: {
+    handle_1: {
+        parameters: {
+            query: {
+                allRequestParams: components["schemas"]["MultiValueMapStringString"];
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/xml": string;
+                };
+            };
+        };
+    };
+    handle_3: {
         parameters: {
             query: {
                 allRequestParams: components["schemas"]["MultiValueMapStringString"];
@@ -8601,7 +8793,7 @@ export interface operations {
             };
         };
     };
-    handle_1: {
+    handle_5: {
         parameters: {
             query: {
                 allRequestParams: components["schemas"]["MultiValueMapStringString"];
